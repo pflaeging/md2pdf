@@ -1,0 +1,42 @@
+---
+pdf-engine: xelatex 
+geometry: margin=2cm
+papersize: a4
+documentclass: article
+linkcolor: black
+fontfamily: "dejavu"
+mainfont: "DejaVu Sans"
+sansfont: "DejaVu Sans"
+monofont: "DejaVu Sans Mono"
+fontsize: 10pt
+header-includes: |
+    \newcommand{\company}{pflaeging.net}
+    \newcommand{\companylogo}{\includegraphics[height=14pt]{pflaeging.png}}
+    \newcommand{\titlelogo}{\includegraphics[height=60pt]{pflaeging.png}}
+    \newcommand{\distribution}{Distribution: pflaeging.net customers}
+    \usepackage{fancyhdr}
+    \usepackage{lastpage}
+    \usepackage{titling}
+    \usepackage{graphicx}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \setlength\parindent{0in}
+    \setlength\parskip{0.1in}
+    \setlength\headheight{15pt}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+    \fancyhead[EL]{\companylogo \company}
+    \fancyhead[EC]{}
+    \fancyhead[ER]{\thetitle}
+    \fancyhead[OL]{\thetitle}
+    \fancyhead[OC]{}
+    \fancyhead[OR]{\company \companylogo}
+    \fancyfoot[EL]{\thepage /\pageref{LastPage}}
+    \fancyfoot[EC]{\distribution}
+    \fancyfoot[ER]{\thedate}
+    \fancyfoot[OL]{\thedate}
+    \fancyfoot[OC]{\distribution}
+    \fancyfoot[OR]{\thepage /\pageref{LastPage}}
+    \renewcommand{\maketitlehooka}{\par\noindent\centering\titlelogo}
+    \patchcmd{\maketitle}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+---
