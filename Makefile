@@ -1,5 +1,6 @@
 # Convert all Markdown files to PDF using the ruleset from pdf.yaml
 # Peter Pfläging <peter@pflaeging.net>
+#
 
 PANDOC = pandoc
 CV = pdf.yaml
