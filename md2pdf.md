@@ -3,9 +3,11 @@ title: "Markdown 2 PDF Generator"
 subject: "Markdown 2 PDF Generator"
 author:
   - "Peter Pfläging <peter@pflaeging.net>"
-date: 2020-11-24 v1
+date: 2021-06-21 v2
 lang: en
-toc: false
+toc: true
+documentclass: article
+classoption: twosides
 ---
 # Markdown 2 PDF Generator
 
@@ -55,3 +57,7 @@ toc: false
 Then run: `make`
 
 Done!
+
+## Revisions
+
+- 2021-06-21: make it work with pandoc 2.14.0.1 and xetex from TeX Live 2021

@@ -14,10 +14,13 @@ header-includes: |
     \newcommand{\companylogo}{\includegraphics[height=14pt]{pflaeging.png}}
     \newcommand{\titlelogo}{\includegraphics[height=60pt]{pflaeging.png}}
     \newcommand{\distribution}{Distribution: pflaeging.net customers}
+    \makeatletter
+    \newcommand{\supertitle}{\@title}
+    \newcommand{\superdate}{\@date} 
     \usepackage{fancyhdr}
     \usepackage{lastpage}
-    \usepackage{titling}
     \usepackage{graphicx}
+    \usepackage{titling}
     \pagestyle{fancy}
     \fancyhf{}
     \setlength\parindent{0in}
@@ -25,18 +28,19 @@ header-includes: |
     \setlength\headheight{15pt}
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0.4pt}
-    \fancyhead[EL]{\companylogo \company}
-    \fancyhead[EC]{}
-    \fancyhead[ER]{\thetitle}
-    \fancyhead[OL]{\thetitle}
-    \fancyhead[OC]{}
-    \fancyhead[OR]{\company \companylogo}
-    \fancyfoot[EL]{\thepage /\pageref{LastPage}}
-    \fancyfoot[EC]{\distribution}
-    \fancyfoot[ER]{\thedate}
-    \fancyfoot[OL]{\thedate}
-    \fancyfoot[OC]{\distribution}
-    \fancyfoot[OR]{\thepage /\pageref{LastPage}}
     \renewcommand{\maketitlehooka}{\par\noindent\centering\titlelogo}
     \patchcmd{\maketitle}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+    \fancyhead[EL]{\companylogo \company}
+    \fancyhead[EC]{}
+    \fancyhead[ER]{\supertitle}
+    \fancyhead[OL]{\supertitle}
+    \fancyhead[OC]{}
+    \fancyhead[OR]{\company \companylogo}
+    \fancyfoot[ER]{\superdate}
+    \fancyfoot[EC]{\distribution}
+    \fancyfoot[EL]{\thepage /\pageref{LastPage}}
+    \fancyfoot[OL]{\superdate}
+    \fancyfoot[OC]{\distribution}
+    \fancyfoot[OR]{\thepage /\pageref{LastPage}}
+    \makeatother
 ---
